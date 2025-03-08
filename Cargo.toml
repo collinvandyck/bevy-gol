@@ -5,7 +5,9 @@ edition = "2024"
 
 [dependencies]
 bevy = { version = "0.15.3", features = ["dynamic_linking"] }
+derive_more = { version = "2.0.1", features = ["display"] }
 log = { version = "*", features = ["max_level_debug", "release_max_level_warn"] }
+strum = { version = "0.27.1", features = ["derive", "strum_macros"] }
 
 # Enable a small amount of optimization in the dev profile.
 [profile.dev]
@@ -33,4 +35,7 @@ inherits = "release"
 opt-level = "s"
 # Strip all debugging information from the binary to slightly reduce file size.
 strip = "debuginfo"
+
+[lints.rust]
+unused = "allow"
 
